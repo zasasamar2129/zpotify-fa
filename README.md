@@ -1,13 +1,11 @@
-# ZPOTIFY-FA Telegram Bot
-
 <div align="center">
     <a href="https://t.me/z_smdbot">
         <kbd>
-            <img width="300" src="https://files.catbox.moe/example_logo.jpg" alt="ZPOTIFY-FA Logo">
+            <img width="300" src="https://github.com/user-attachments/assets/40c81490-ba9b-445f-9322-997250634a22" alt="ZPOTIFY-FA Logo">
         </kbd>
     </a>
 
-### ***ZPOTIFY-FA***
+### ***𝒵𝒫𝒪𝒯𝐼𝐹𝒴-𝐹𝒜***
 
 A powerful Telegram bot for downloading music and videos from Spotify and YouTube directly to your device.
 </div>
