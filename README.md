@@ -1,131 +1,156 @@
-# ZPOTIFY-FA
+# ZPOTIFY-FA Telegram Bot
 
-ZPOTIFY-FA-Telegram-Bot is a Telegram bot that allows users to download music/video from Spotify and YouTube. It provides a convenient way to access and download your favorite tracks/videos directly to your device.
+<div align="center">
+    <a href="https://t.me/z_smdbot">
+        <kbd>
+            <img width="300" src="https://files.catbox.moe/example_logo.jpg" alt="ZPOTIFY-FA Logo">
+        </kbd>
+    </a>
 
-You can test this bot at:
-```https://t.me/z_smdbot```
+### ***ZPOTIFY-FA***
+
+A powerful Telegram bot for downloading music and videos from Spotify and YouTube directly to your device.
+</div>
+
+---
 
 ## Features
 
-- Download music from Spotify links
-- Search for songs on Spotify using keywords
-- Supports different audio formats and qualities
-- Option to select between SpotDL and YoutubeDL for downloading
-- Broadcast messages to all users or specific subscribers
-- Subscription management for users
-- Voice recognition for song search
-- Screenshot capture of tweets
-- Download twitter media
-- Download Instagram media
-- Download Youtube media
+- 🎵 **Spotify Music Downloads**
+- 🔎 **Keyword-based Search on Spotify**
+- 🎶 **Multiple Audio Formats and Quality Options**
+- 🛠️ **SpotDL and YouTubeDL Integration**
+- 📢 **Broadcast Messages to Users**
+- 📃 **Subscription Management**
+- 🎤 **Voice Recognition for Song Search**
+- 📸 **Tweet Screenshot Capture**
+- 📹 **Twitter Media Downloads**
+- 🎥 **Instagram Media Downloads**
+- 🔄 **YouTube Media Downloads**
 
-## Installation
+---
 
-Follow these steps to set up the `ZPOTIFY-FA` project on your system.
+## 🔧 Installation
 
 ### Step 1: Clone the Repository
 
-Open a terminal and clone the `ZPOTIFY-FA` repository from GitHub:
-
-```zsh
-apt install git ffmpeg python3 python3-pip -y
+```bash
+sudo apt install git ffmpeg python3 python3-pip -y
 git clone https://github.com/zasasamar2129/zpotify-fa.git
 ```
 
-### Step 2: Install Python Dependencies
+### Step 2: Install Dependencies
 
-Navigate to the cloned repository's directory and install the required Python dependencies using `pip`:
+Navigate to the project directory and install the required Python packages:
 
-```zsh
+```bash
 cd zpotify-fa
 pip3 install -r requirements.txt
 ```
 
+### Step 3: Configure Environment Variables
 
-### Step 3: Set Up Your Environment Variables
+Create a `config.env` file in the root directory and add the following:
 
-Create a `config.env` file in the root directory of the project and add the following environment variables:
-
-- `SPOTIFY_CLIENT_ID=your_spotify_client_id`
-- `SPOTIFY_CLIENT_SECRET=your_spotify_client_secret`
-- `BOT_TOKEN=your_telegram_bot_token`
-- `API_ID=your_telegram_api_id`
-- `API_HASH=your_telegram_api_hash`
-- `GENIUS_ACCESS_TOKEN=your_genius_access_token`
+```env
+SPOTIFY_CLIENT_ID=your_spotify_client_id
+SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
+BOT_TOKEN=your_telegram_bot_token
+API_ID=your_telegram_api_id
+API_HASH=your_telegram_api_hash
+GENIUS_ACCESS_TOKEN=your_genius_access_token
+```
 
 ### Step 4: Run the Bot
 
-With all dependencies installed and environment variables set, you can now run the bot:
-
-```zsh
+```bash
 python3 main.py
 ```
-### DOCKER
+
+---
+
+### 🚀 Docker Deployment
+
+```bash
+docker build -t musicfa .
+docker run musicfa
 ```
-  docker build -t musicfa .
-  docker run musicfa
-```
-## Usage
 
-1. Start a conversation with the bot by sending the `/start` command.
-2. Share a Spotify link or use the `/search` command followed by a song title or lyrics to find and download music.
-3. Use the `/settings` command to change the audio format and quality.
-4. Subscribe to receive updates and news from the bot.
-5. Use the `/admin` command to access admin features (available only to authorized users).
+---
 
-## Commands
+## 📊 Usage
 
-- `/start`: Start the bot and get the welcome message.
-- `/search <query>`: Search for songs on Spotify.
-- `/settings`: Access settings to change audio format and quality, downloading core, and subscription.
-- `/core`: Access directly to core settings to change downloading core.
-- `/quality`: Access directly to quality settings to change audio format and quality.
-- `/subscribe`: Subscribe to receive updates.
-- `/unsubscribe`: Unsubscribe from updates.
-- `/help`: Get help on how to use the bot.
-- `/ping`: Check the bot's response time.
-- `/stats`: Get statistics about the bot's usage.
-- `/admin`: Access admin features.
+1. Start the bot with `/start`.
+2. Send a Spotify link or use `/search <query>` to find songs.
+3. Use `/settings` to customize audio quality and format.
+4. Access admin features via `/admin` (authorized users only).
 
-## Admin Commands
+---
 
-- `/broadcast`: Send a message to all subscribed users or specific subscribers.
-   - Ex: `/broadcast` -> Send a message to all subscribed users.
-   - Ex: `/broadcast (1297994832,1297994833)` -> Send a message to 1297994832 and 1297994833 only.
-   - Ex: `/broadcast_to_all` -> Send a message to all users.
-- `/stats`: Get statistics about the bot's usage.
+## 🔧 Commands
 
-## Dependencies
+### User Commands
+
+- `/start`: Initialize the bot.
+- `/search <query>`: Find songs on Spotify.
+- `/settings`: Adjust settings like format and quality.
+- `/core`: Directly change the downloading core.
+- `/quality`: Quickly change audio quality.
+- `/subscribe`: Subscribe to updates.
+- `/unsubscribe`: Opt-out of updates.
+- `/help`: Display usage instructions.
+- `/ping`: Check bot response time.
+- `/stats`: View bot usage statistics.
+
+### Admin Commands
+
+- `/broadcast <message>`: Send a message to all subscribers.
+  - Example: `/broadcast Hello, users!`
+  - Example: `/broadcast_to_all Update available!`
+- `/stats`: Retrieve bot usage stats.
+
+---
+
+## 🔗 Dependencies
 
 - Python 3.10+
 - Telethon
 - Spotipy
 - Yt-dlp
-- spotdl
+- SpotDL
 - Shazamio
 - Pillow
-- dotenv
-- aiosqlite
-- lyricsgenius
-- FastTelethonhelper
+- Dotenv
+- AioSQLite
+- LyricsGenius
+- FastTelethonHelper
 
-## Contributing
+---
 
-Contributions are welcome! Please feel free to submit a pull request or open an issue if you find any bugs or have suggestions for improvements.
+## 🎨 Contributing
 
-## License
+Contributions are welcome! Feel free to submit pull requests or open issues for bugs and enhancements.
+
+---
+
+## 🛡️ License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-## Contact
+---
 
-For any inquiries or feedback, please contact the creator:
-- Telegram: @Itachi2129
+## 📢 Contact
+
+For questions or feedback:
+- Telegram: [@Itachi2129](https://t.me/Itachi2129)
 - Email: zasasamar2129@gmail.com
 
-## Acknowledgments
+---
 
-- Spotify API for providing access to music metadata.
-- Telegram API for the bot framework.
-- Shazam API for voice recognition.
-- YoutubeDL for downloading music from YouTube.
+## ✨ Acknowledgments
+
+- Spotify API for metadata access
+- Telegram API for bot functionality
+- Shazam API for voice recognition
+- YouTubeDL for downloading media
+
