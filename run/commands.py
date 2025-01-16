@@ -6,6 +6,8 @@ from .buttons import Buttons
 from .messages import BotMessageHandler
 from .channel_checker import respond_based_on_channel_membership
 from .version_checker import update_bot_version_user_season
+import os
+import sys
 
 ADMIN_USER_IDS = BotState.ADMIN_USER_IDS
 BOT_CLIENT = BotState.BOT_CLIENT
@@ -23,7 +25,22 @@ class BotCommandHandler:
             await db.create_user_settings(user_id)
         await respond_based_on_channel_membership(event, f"""سلام {sender_name}!👋 \n{BotMessageHandler.start_message}""",
                                                   buttons=Buttons.main_menu_buttons)
+    @staticmethod
+    async def handle_restart_command(event):
+        # Ensure only admins can restart the bot
+        if event.sender_id not in ADMIN_USER_IDS:
+            await event.respond("You are not authorized to restart the bot.")
+            return
 
+        # Inform the admin that the bot is restarting
+        await event.respond("Restarting the bot...")
+
+        # Restart the bot process
+        try:
+            python = sys.executable  # Path to the Python interpreter
+            os.execl(python, python, *sys.argv)  # Replace current process with a new one
+        except Exception as e:
+            await event.respond(f"Failed to restart the bot: {str(e)}")
     @staticmethod
     async def handle_stats_command(event):
         if event.sender_id not in ADMIN_USER_IDS:
