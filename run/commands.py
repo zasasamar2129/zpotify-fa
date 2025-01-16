@@ -41,6 +41,7 @@ class BotCommandHandler:
             os.execl(python, python, *sys.argv)  # Replace current process with a new one
         except Exception as e:
             await event.respond(f"Failed to restart the bot: {str(e)}")
+            
     @staticmethod
     async def handle_stats_command(event):
         if event.sender_id not in ADMIN_USER_IDS:
